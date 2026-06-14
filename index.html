@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cake fairy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">Cake fairy</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#services-container">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <h1 class="h-primary">Welcome to Cake Fairy</h1><br>
+    <h2>Fresh Cakes for Every Occasion</h2>
+    <p>Choose your favorite cake & make your moments sweet</p>
+    <a href="#cakes" class="hero-btn">Explore Cakes</a>
+</section>
+
+<!-- Cakes Section -->
+<section id="cakes" class="cakes">
+    <h2>Our Popular Cakes</h2>
+
+    <div class="cake-box">
+        <div class="cake-card">
+           <img src="Images/Chocolate cake.jpg">
+            <h3>Chocolate Cake</h3>
+            <p>Rich & creamy chocolate layers</p>
+            <span>₹350</span>
+            <a href="#contact"><button>Order Now</button></a>
+        </div>
+
+        <div class="cake-card">
+            <img src="Images/Vanilla cake.jpg">
+            <h3>Vanilla Cake</h3>
+            <p>Classic vanilla delight</p>
+            <span>₹250</span>
+            <a href="#contact"><button>Order Now</button></a>
+        </div>
+
+        <div class="cake-card">
+            <img src="Images/Strawberry cake.jpg">
+            <h3>Strawberry Cake</h3>
+            <p>Fresh strawberry flavor</p>
+            <span>₹400</span>
+            <a href="#contact"><button>Order Now</button></a>
+        </div>
+
+        <div class="cake-card">
+            <img src="Images/Butterscotch cake.jpg">
+            <h3>butterscotch Cake</h3>
+            <p>Classic flavor,unforgettable taste</p>
+            <span>₹500</span>
+            <a href="#contact"><button>Order Now</button></a>
+        </div>
+    </div>
+</section>
+
+<section id="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="/Images/Services/cake.jpg" alt="">
+                <h2 class="h-secondary center">Cake Delivery</h2>
+                <p class="center">We will deliver the cake at your place within the time so order the cake in our cake
+                    fairy.</p>
+            </div>
+            <div class="box">
+                <img src="/Images/Services/pastry.jpg" alt="">
+                <h2 class="h-secondary center">Pastry Delivery</h2>
+                <p class="center">We will also deliver the pastry at your place within time so order the cake in our
+                    cake fairy. </p>
+            </div>
+            <div class="box">
+                <img src="/Images/Services/decoration.jpg" alt="">
+                <h2 class="h-secondary center">Decoration</h2>
+                <p class="center">We will decorate the all type events like birthday celebration, marriage event,
+                    Parties etc</p>
+            </div>
+        </div>
+    </section>
+
+<!-- About -->
+<section id="about" class="about">
+    <h2>Why Choose Us?</h2>
+    <p>
+        Cake fairy delivers freshly baked cakes with premium quality ingredients.
+        Perfect for birthdays, weddings, and celebrations.
+    </p>
+</section>
+
+<!-- Contact -->
+
+
+<section id="contact">
+        <h1 class="h-primary center">Contact Us</h1>
+        <div id="contact-box">
+            <form name="submit-to-google-sheet">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="Name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="Email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="phone" name="Phone Number" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="Message" id="message" cols="30" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn">Send</button>
+                </div>
+            </form>
+        </div>
+        <span id="msg"></span>
+        
+</section>
+
+<script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwkFzIM5M2-9-lcRpNV41T87eyzzsohP5bzUlf9vJiNl8w0jh1nvbrejj0MKbO8beQp6Q/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Cake Fairy. All Rights Reserved ! cakefairy@gmail.com | +919876543210 | </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #fff5f7;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #ff4d6d;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffe3e9;
+}
+
+#home h1{
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+    font-family:'Lobster', cursive;
+   
+    
+}
+
+/* Hero */
+.hero {
+    height: 89vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url("https://static.vecteezy.com/system/resources/thumbnails/039/360/792/small/ai-generated-colorful-birthday-cake-with-candle-with-copy-space-background-happy-birthday-concept-photo.jpg") center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    animation: slideDown 1.5s;
+}
+
+.hero p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.hero-btn {
+    background: #ff4d6d;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    color: #ff4d6d;
+}
+
+/* Cakes */
+.cakes {
+    padding: 50px;
+    text-align: center;
+}
+
+.cakes h2 {
+    color: #ff4d6d;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.cake-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.cake-card {
+    background: white;
+    width: 260px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.4s;
+}
+
+.cake-card:hover {
+    transform: translateY(-10px);
+}
+
+.cake-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.cake-card h3 {
+    margin: 10px 0;
+    color: #ff4d6d;
+}
+
+.cake-card span {
+    display: block;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.cake-card button {
+    background: #ff4d6d;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cake-card button:hover {
+    background: #ff1f4d;
+}
+
+/* About */
+.about {
+    padding: 40px;
+    text-align: center;
+    background: #ffe3e9;
+}
+
+.about h2 {
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+/* Services Section */
+
+#services{
+    margin: 34px;
+    display: flex;
+}
+
+#services .box{
+    border: 2px solid brown;
+    padding: 34px;
+    margin: 2px 55px;
+    background: #f2f2f2;
+    border-radius: 20px;
+}
+
+#services .box:hover{
+    background-color: #d9d6d6;
+}
+
+#services .box img{
+    padding-top: 5px;
+    height: 160px;
+    margin: auto;
+    display: block;
+}
+
+#services .box p{
+    font-family: 'Bree Serif', serif;
+}
+
+/* Contact */
+.contact {
+    padding: 40px;
+    text-align: center;
+}
+
+/* contact */
+#contact{
+    position: relative;
+}
+
+#contact::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background: url('../Image/Background/bg1.jfif') no-repeat center center/cover;
+}
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+#contact-box input, #contact-box textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+} 
+
+#contact-box form{
+    width: 40%;
+}
+
+#contact-box label{
+   font-size: 1.3rem;
+   font-family: 'Bree Serif', serif;
+
+}
+/* Utility classes */
+
+.h-primary{
+    font-size: 1.8rem;
+    padding: 12px;
+    /* font-family: 'Lobster', cursive; */
+}
+
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid black;
+    background-color: blue;
+    color: white;
+    margin: 17px;
+    margin-bottom: 0%;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(28, 28, 161);
+}
+
+.center{
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #ff4d6d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Animation */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#msg{
+    color: #61b752;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 30%;
+    margin-top: 0%;
+
+}
